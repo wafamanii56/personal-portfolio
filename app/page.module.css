@@ -127,6 +127,11 @@
   max-width: 40ch;
 }
 
+.heroDescStrong {
+  color: var(--burn-red-dark);
+  font-weight: 700;
+}
+
 .heroButtons {
   display: flex;
   gap: 10px;
@@ -197,6 +202,13 @@
   height: 250px;
   font-size: 15px;
   padding: 10px;
+}
+
+.photocardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .photocardCaption {
@@ -633,6 +645,13 @@
   height: 130px;
   align-items: flex-end;
   padding: 7px;
+}
+
+.deskCrewImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .deskCrewImage span {

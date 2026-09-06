@@ -28,14 +28,13 @@ export default function Home() {
               </h1>
               <p className={styles.heroTagline}>building things, one bug fix at a time!!</p>
               <p className={styles.heroDesc}>
-                Web dev, cybersec, data — SHE WANTS IT ALL !
-                A **rookie with too many tabs open**, she’s still at the very beginning of her tech journey, 
-                figuring out where she wants to grow (and refusing to pick just one lane yet). 
-                Curious about the intersection of technology, people, and sustainability, 
-                she’s especially interested in how innovations shape — and sometimes manipulate — the way people think and behave. 
-                One day, she might even turn those rabbit holes into a PhD. For now, she’s here to learn, explore, 
-                and see where the tabs take her.
-
+                <strong className={styles.heroDescStrong}>Web dev, cybersec, data — SHE WANTS IT ALL.</strong> 🌱
+                A <strong className={styles.heroDescStrong}>rookie with too many tabs open</strong>, she&apos;s
+                still at the very beginning of her tech journey, figuring out where she wants to grow (and
+                refusing to pick just one lane yet). Curious about the intersection of technology, people, and
+                sustainability, she&apos;s especially interested in how innovations shape — and sometimes
+                manipulate — the way people think and behave. One day, she might even turn those rabbit holes
+                into a PhD. For now, she&apos;s here to learn, explore, and see where the tabs take her.
               </p>
               <div className={styles.heroButtons}>
                 <a href="#work" className={styles.btnPrimary}>VIEW MY WORK</a>
@@ -45,7 +44,9 @@ export default function Home() {
 
             <div className={styles.heroCollage}>
               <div className={styles.photocard}>
-                <div className={styles.photocardImage}>[ your photo — print like a photocard ]</div>
+                <div className={styles.photocardImage}>
+                  <img src="/hero-photo.jpg" alt="Wafa" />
+                </div>
                 <p className={styles.photocardCaption}>me @ 3am, debugging</p>
               </div>
               <span className={styles.tapeOne} />
@@ -152,10 +153,15 @@ export default function Home() {
             <span className={styles.sectionNote}>they supervise every commit</span>
           </div>
           <div className={styles.deskCrewGrid}>
-            {[-2.5, 1.8, -1.2, 2.4].map((rotation, i) => (
-              <div key={i} className={styles.deskCrewItem} style={{ transform: `rotate(${rotation}deg)` }}>
+            {[
+              { rotation: -2.5, src: "/jjopoo.jpg", alt: "jjopoo" },
+              { rotation: 1.8, src: "/eong.jpg", alt: "eong" },
+              { rotation: -1.2, src: "/jjed.jpg", alt: "jjed" },
+              { rotation: 2.4, src: null, alt: "" },
+            ].map((item, i) => (
+              <div key={i} className={styles.deskCrewItem} style={{ transform: `rotate(${item.rotation}deg)` }}>
                 <div className={styles.deskCrewImage}>
-                  <span>figure {i + 1}</span>
+                  {item.src ? <img src={item.src} alt={item.alt} /> : <span>figure {i + 1}</span>}
                 </div>
               </div>
             ))}
@@ -167,7 +173,7 @@ export default function Home() {
           <p className={styles.contactSubtitle}>put me on your team ♡</p>
           <div className={styles.contactButtons}>
             <a href="mailto:your@email.com" className={styles.contactBtnEmail}>EMAIL ME</a>
-            <a href="https://github.com/yourusername" className={styles.contactBtnGithub}>GITHUB</a>
+            <a href="https://github.com/wafamanii56" className={styles.contactBtnGithub}>GITHUB</a>
             <a href="https://linkedin.com/in/yourusername" className={styles.contactBtnLinkedin}>LINKEDIN</a>
           </div>
         </section>
