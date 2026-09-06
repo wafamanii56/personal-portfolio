@@ -19,17 +19,23 @@ export default function Home() {
           <div className={styles.heroGrid}>
             <div>
               <div className={styles.heroBadge}>
-                <span>★ HI, I&apos;M ___ ★</span>
+                <span>★ HI, I&apos;M WAFA ★</span>
               </div>
               <h1 className={styles.heroTitle}>
-                CS
+                TECH
                 <br />
-                STUDENT
+                ENTHUSIAST
               </h1>
               <p className={styles.heroTagline}>building things, one bug fix at a time!!</p>
               <p className={styles.heroDesc}>
-                Currently learning [your focus — web dev / ML / systems]. Looking for a summer
-                &apos;27 internship. Ask me about [thing you love building].
+                Web dev, cybersec, data — SHE WANTS IT ALL !
+                A **rookie with too many tabs open**, she’s still at the very beginning of her tech journey, 
+                figuring out where she wants to grow (and refusing to pick just one lane yet). 
+                Curious about the intersection of technology, people, and sustainability, 
+                she’s especially interested in how innovations shape — and sometimes manipulate — the way people think and behave. 
+                One day, she might even turn those rabbit holes into a PhD. For now, she’s here to learn, explore, 
+                and see where the tabs take her.
+
               </p>
               <div className={styles.heroButtons}>
                 <a href="#work" className={styles.btnPrimary}>VIEW MY WORK</a>
