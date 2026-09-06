@@ -1,25 +1,35 @@
-# CODING AGENTS: READ THIS FIRST
+# Portfolio
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Personal portfolio site, built with Next.js (App Router) + TypeScript.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+Implements the "Burn Book" direction (`4a`) from the Claude Design handoff in
+[`design/`](./design) — a photocard-collage scrapbook aesthetic (hot pink +
+red, taped prints, star stickers, marker scrawl). See `design/README.md` and
+`design/chats/` for the full design history and the other mockup directions
+that weren't built.
 
-## What you should do — IMPORTANT
+## Getting started
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+```bash
+npm install
+npm run dev
+```
 
-**Read `project/Portfolio Directions.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+Open [http://localhost:3000](http://localhost:3000).
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+## Filling in your content
 
-## About the design files
+The page ships with clearly labeled placeholders — swap these in `app/page.tsx`:
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+- Name, tagline, and bio in the hero section
+- `[ your photo — print like a photocard ]` and the four "figure" boxes under
+  "THE DESK CREW" — replace with `<img>` tags pointing at real photos
+- The three project cards (name, description, tags, repo link)
+- `RESUME PDF` link — drop a `resume.pdf` into `public/`
+- Contact links (email, GitHub, LinkedIn) in the closing banner
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+## Deploying
 
-## Bundle contents
-
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Personal portfolio design ideas` project files (HTML prototypes, assets, components)
+This is a standard Next.js app — push to GitHub and import the repo on
+[Vercel](https://vercel.com/new), or run `npm run build && npm start` anywhere
+that supports Node.

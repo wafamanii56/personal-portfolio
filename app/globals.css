@@ -1,0 +1,31 @@
+:root {
+  --burn-red: #e8112d;
+  --burn-red-dark: #c40f27;
+  --burn-pink: #ff2e88;
+  --burn-pink-light: #ffd0e4;
+  --burn-pink-bg: #fff0f6;
+  --burn-blue: #1b6fa8;
+  --burn-ink: #111111;
+  --burn-text: #3d2530;
+  --burn-photo-ink: #a3104f;
+  --burn-footer-text: #ffa8ce;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f7f2f6;
+  color: var(--burn-ink);
+}
+
+a {
+  color: inherit;
+}

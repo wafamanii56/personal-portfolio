@@ -1,0 +1,765 @@
+.page {
+  min-height: 100vh;
+  padding: clamp(16px, 4vw, 56px);
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 900px;
+  background: var(--burn-pink-bg);
+  border: 1px solid #ffc9e0;
+  border-radius: 6px;
+  box-shadow: 0 18px 50px rgba(120, 10, 70, 0.2);
+  overflow: hidden;
+}
+
+/* ---------- Nav ---------- */
+
+.nav {
+  background: #111;
+  padding: 16px clamp(16px, 4vw, 26px);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.navBrand {
+  font-family: var(--font-anton), sans-serif;
+  font-size: clamp(28px, 6vw, 44px);
+  line-height: 1;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.navBrandYear {
+  color: var(--burn-pink);
+}
+
+.navLinks {
+  margin-left: auto;
+  display: flex;
+  gap: 16px;
+  font-family: var(--font-quicksand), sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  list-style: none;
+  padding: 0;
+}
+
+.navLinks a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navLinks a:hover {
+  color: var(--burn-pink);
+}
+
+.navLinkContact {
+  color: var(--burn-pink) !important;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  padding: 34px 30px 26px;
+  background: radial-gradient(ellipse 500px 260px at 82% 8%, #ffd0e4, transparent 70%), var(--burn-pink-bg);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 26px;
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.heroBadge {
+  background: var(--burn-red);
+  padding: 9px 18px;
+  transform: rotate(-2.2deg);
+  display: inline-block;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
+  margin-bottom: 16px;
+}
+
+.heroBadge span {
+  font-family: var(--font-anton), sans-serif;
+  font-size: 22px;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.heroTitle {
+  font-family: var(--font-anton), sans-serif;
+  font-size: clamp(46px, 8vw, 74px);
+  line-height: 0.9;
+  margin: 0 0 6px;
+  color: #111;
+}
+
+.heroTagline {
+  font-family: var(--font-caveat), cursive;
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--burn-red-dark);
+  margin: 0 0 18px;
+  transform: rotate(-1.4deg);
+}
+
+.heroDesc {
+  font-family: var(--font-quicksand), sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--burn-text);
+  margin: 0 0 20px;
+  max-width: 40ch;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: var(--font-anton), sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+}
+
+.btnPrimary {
+  composes: btn;
+  background: var(--burn-pink);
+  color: #111;
+  padding: 11px 20px;
+  box-shadow: 3px 3px 0 #111;
+}
+
+.btnSecondary {
+  composes: btn;
+  background: #fff;
+  color: #111;
+  border: 2px solid #111;
+  padding: 9px 20px;
+  box-shadow: 3px 3px 0 var(--burn-pink);
+}
+
+/* ---------- Hero collage ---------- */
+
+.heroCollage {
+  position: relative;
+  height: 400px;
+}
+
+.heroDecorRow {
+  display: contents;
+}
+
+.stripedPlaceholder {
+  background: repeating-linear-gradient(45deg, #ffe1ef 0 9px, #ffd0e4 9px 18px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-vt323), monospace;
+  color: var(--burn-photo-ink);
+}
+
+.photocard {
+  position: absolute;
+  top: 0;
+  left: 6%;
+  width: 220px;
+  background: #fff;
+  padding: 10px 10px 30px;
+  transform: rotate(-4deg);
+  box-shadow: 0 10px 22px rgba(120, 10, 70, 0.22);
+}
+
+.photocardImage {
+  composes: stripedPlaceholder;
+  height: 250px;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.photocardCaption {
+  font-family: var(--font-caveat), cursive;
+  font-weight: 700;
+  font-size: 20px;
+  color: #111;
+  margin: 8px 0 0;
+  text-align: center;
+}
+
+.tape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.tapeOne {
+  composes: tape;
+  top: -8px;
+  left: 34%;
+  width: 86px;
+  height: 24px;
+  transform: rotate(-7deg);
+}
+
+.tapeTwo {
+  composes: tape;
+  top: 142px;
+  right: 38%;
+  width: 78px;
+  height: 22px;
+  transform: rotate(5deg);
+}
+
+.stickyNote {
+  position: absolute;
+  top: 150px;
+  right: 0;
+  width: 230px;
+  background: #fff;
+  border: 2px solid #111;
+  padding: 14px 16px;
+  transform: rotate(3deg);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+}
+
+.stickyNote p {
+  font-family: var(--font-caveat), cursive;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 1.15;
+  color: var(--burn-blue);
+  margin: 0;
+}
+
+.star {
+  position: absolute;
+  background: #fff;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.starInner {
+  position: absolute;
+  inset: 4px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.starBig {
+  composes: star;
+  bottom: 6px;
+  left: 0;
+  width: 104px;
+  height: 104px;
+  transform: rotate(-8deg);
+}
+
+.starBig .starInner {
+  inset: 5px;
+  background: var(--burn-pink);
+}
+
+.starSmall {
+  composes: star;
+  bottom: 70px;
+  right: 34%;
+  width: 66px;
+  height: 66px;
+  transform: rotate(12deg);
+}
+
+.starSmall .starInner {
+  background: var(--burn-red);
+}
+
+.heroNumber {
+  position: absolute;
+  bottom: 22px;
+  right: 6px;
+  font-family: var(--font-anton), sans-serif;
+  font-size: 52px;
+  color: var(--burn-pink);
+  transform: rotate(-6deg);
+  text-shadow: 2px 2px 0 #fff;
+}
+
+/* ---------- Divider ---------- */
+
+.divider {
+  height: 16px;
+  background: repeating-linear-gradient(90deg, var(--burn-red) 0 22px, var(--burn-pink) 22px 44px, #111 44px 52px);
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: 26px 30px 4px;
+  background: #fff;
+}
+
+.sectionHeadingRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.sectionLabel {
+  font-family: var(--font-anton), sans-serif;
+  font-size: 26px;
+  background: #111;
+  color: #fff;
+  padding: 5px 14px;
+  transform: rotate(-1.5deg);
+  display: inline-block;
+}
+
+.sectionNote {
+  font-family: var(--font-caveat), cursive;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--burn-red-dark);
+}
+
+/* ---------- Toolkit ---------- */
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 22px;
+}
+
+.tag {
+  font-family: var(--font-anton), sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  padding: 7px 15px;
+  display: inline-block;
+}
+
+.tagPink {
+  composes: tag;
+  background: var(--burn-pink);
+  color: #111;
+  transform: rotate(-2deg);
+  box-shadow: 2px 2px 0 #111;
+}
+
+.tagOutline {
+  composes: tag;
+  background: #fff;
+  color: #111;
+  border: 2px solid #111;
+  padding: 5px 15px;
+  transform: rotate(1.5deg);
+}
+
+.tagRed {
+  composes: tag;
+  background: var(--burn-red);
+  color: #fff;
+  transform: rotate(-1deg);
+  box-shadow: 2px 2px 0 #111;
+}
+
+.tagBlack {
+  composes: tag;
+  background: #111;
+  color: #fff;
+  transform: rotate(2deg);
+}
+
+.tagOutlinePink {
+  composes: tag;
+  background: #fff;
+  color: #111;
+  border: 2px solid var(--burn-pink);
+  padding: 5px 15px;
+  transform: rotate(-1.5deg);
+}
+
+.tagLight {
+  composes: tag;
+  background: var(--burn-pink-light);
+  color: #111;
+  transform: rotate(1deg);
+  box-shadow: 2px 2px 0 var(--burn-red);
+}
+
+/* ---------- Projects ---------- */
+
+.projectsSection {
+  composes: section;
+  padding-top: 30px;
+}
+
+.projectsHeadingRow {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.projectsTitle {
+  font-family: var(--font-anton), sans-serif;
+  font-size: 34px;
+  color: #111;
+}
+
+.projectsPill {
+  font-family: var(--font-anton), sans-serif;
+  font-size: 18px;
+  background: var(--burn-red);
+  color: #fff;
+  padding: 4px 12px;
+  transform: rotate(2deg);
+  display: inline-block;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 20px;
+  padding-bottom: 6px;
+}
+
+@media (max-width: 700px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featuredCard {
+  position: relative;
+  background: #fff;
+  border: 2px solid #111;
+  box-shadow: 6px 6px 0 var(--burn-pink);
+  transform: rotate(-0.8deg);
+}
+
+.featuredImage {
+  composes: stripedPlaceholder;
+  height: 170px;
+  font-size: 16px;
+}
+
+.featuredBody {
+  padding: 16px 18px 18px;
+}
+
+.badgeSmall {
+  font-family: var(--font-anton), sans-serif;
+  font-size: 15px;
+  background: #111;
+  color: #fff;
+  padding: 3px 10px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.featuredTitle {
+  font-family: var(--font-anton), sans-serif;
+  font-size: 28px;
+  line-height: 1;
+  margin: 0 0 8px;
+  color: #111;
+}
+
+.projectDesc {
+  font-family: var(--font-quicksand), sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--burn-text);
+  margin: 0 0 12px;
+}
+
+.techTagRow {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.techTag {
+  font-family: var(--font-quicksand), sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 3px 10px;
+}
+
+.techTagPink {
+  composes: techTag;
+  background: var(--burn-pink);
+  color: #111;
+}
+
+.techTagBlack {
+  composes: techTag;
+  background: #111;
+  color: #fff;
+}
+
+.techTagLight {
+  composes: techTag;
+  background: var(--burn-pink-light);
+  color: #111;
+}
+
+.viewRepoLink {
+  font-family: var(--font-anton), sans-serif;
+  font-size: 16px;
+  color: var(--burn-red-dark);
+  text-decoration: none;
+  border-bottom: 2px solid var(--burn-pink);
+}
+
+.cornerStar {
+  position: absolute;
+  top: -14px;
+  right: -12px;
+  width: 74px;
+  height: 74px;
+  background: #fff;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  transform: rotate(14deg);
+}
+
+.cornerStar span {
+  position: absolute;
+  inset: 4px;
+  background: var(--burn-red);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  display: block;
+}
+
+.sideProjects {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sideCard {
+  background: #fff;
+  border: 2px solid #111;
+  padding: 14px 16px;
+}
+
+.sideCardPink {
+  composes: sideCard;
+  box-shadow: 5px 5px 0 #111;
+  transform: rotate(1deg);
+}
+
+.sideCardRed {
+  composes: sideCard;
+  box-shadow: 5px 5px 0 var(--burn-red);
+  transform: rotate(-1.2deg);
+}
+
+.sideTitle {
+  font-family: var(--font-anton), sans-serif;
+  font-size: 23px;
+  line-height: 1;
+  margin: 0 0 6px;
+  color: #111;
+}
+
+.sideDesc {
+  composes: projectDesc;
+  font-size: 13.5px;
+  margin: 0 0 10px;
+}
+
+.faveNote {
+  font-family: var(--font-caveat), cursive;
+  font-weight: 700;
+  font-size: 21px;
+  color: var(--burn-blue);
+  margin: 0 0 8px;
+}
+
+/* ---------- Desk crew ---------- */
+
+.deskCrewSection {
+  composes: section;
+  padding: 32px 30px 8px;
+}
+
+.deskCrewGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 700px) {
+  .deskCrewGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.deskCrewItem {
+  background: #fff;
+  padding: 8px 8px 22px;
+  box-shadow: 0 8px 18px rgba(120, 10, 70, 0.16);
+}
+
+.deskCrewImage {
+  composes: stripedPlaceholder;
+  height: 130px;
+  align-items: flex-end;
+  padding: 7px;
+}
+
+.deskCrewImage span {
+  font-size: 14px;
+  background: #fff;
+  padding: 1px 7px;
+}
+
+/* ---------- Contact ---------- */
+
+.contactBanner {
+  margin: 34px 0 0;
+  background: var(--burn-red);
+  padding: 32px 30px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.contactTitle {
+  font-family: var(--font-anton), sans-serif;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.contactSubtitle {
+  font-family: var(--font-caveat), cursive;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--burn-pink-light);
+  margin: 0 0 20px;
+}
+
+.contactButtons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contactBtn {
+  font-family: var(--font-anton), sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  padding: 11px 22px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.contactBtnEmail {
+  composes: contactBtn;
+  background: var(--burn-pink);
+  color: #111;
+  box-shadow: 3px 3px 0 #111;
+}
+
+.contactBtnGithub {
+  composes: contactBtn;
+  background: #fff;
+  color: #111;
+  box-shadow: 3px 3px 0 #111;
+}
+
+.contactBtnLinkedin {
+  composes: contactBtn;
+  background: #111;
+  color: #fff;
+  box-shadow: 3px 3px 0 var(--burn-pink);
+}
+
+.footerBar {
+  text-align: center;
+  font-family: var(--font-quicksand), sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--burn-footer-text);
+  background: #111;
+  margin: 0;
+  padding: 12px;
+}
+
+/* ---------- Mobile hero collage: swap the overlapping scrapbook
+   composition for a simple stacked layout so nothing collides ---------- */
+
+@media (max-width: 700px) {
+  .heroCollage {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 8px 0 32px;
+  }
+
+  .photocard,
+  .stickyNote {
+    position: static;
+    transform: none;
+  }
+
+  .photocard {
+    transform: rotate(-3deg);
+  }
+
+  .stickyNote {
+    transform: rotate(2deg);
+  }
+
+  .tapeOne,
+  .tapeTwo {
+    display: none;
+  }
+
+  .heroDecorRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .starBig,
+  .starSmall,
+  .heroNumber {
+    position: static;
+  }
+}
